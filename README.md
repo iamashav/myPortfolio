@@ -7,6 +7,8 @@
 ⚡️ Styled with Tailwind CSS\
 ⚡️ Fully responsive and accessible design\
 ⚡️ Lottie animation\
+⚡️ GSAP\
+⚡️ leon-sans\
 ⚡️ Responsive images\
 ⚡️ Amazing illustrations 
 
