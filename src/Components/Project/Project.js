@@ -1,8 +1,21 @@
 import React from 'react';
 import projects from './ProjectData';
+import {motion} from 'framer-motion';
 
-const Project = () => {
+const Project = ({projectDelay}) => {
   return (
+    <motion.div
+      initial={{
+        scale: 0,
+        }}
+      animate={{
+        scale: 1,
+      }}
+      transition={{
+        delay: projectDelay,
+        duration: 0.45,
+        }}
+    >
     <>
       <section className='my-28 px-5' id='projects'>
         <header className='text-2xl font-bold pt-10'>
@@ -52,6 +65,7 @@ const Project = () => {
         </a>
       </div>
     </>
+    </motion.div>
   );
 };
 

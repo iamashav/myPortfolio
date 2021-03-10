@@ -1,11 +1,23 @@
 import React from 'react';
+import {motion} from 'framer-motion';
 
 
-const Contact = () => {
+const Contact = ({contactDelay}) => {
 
 
     return (
-
+        <motion.div
+            initial={{
+                scale: 0,
+                }}
+            animate={{
+                scale: 1,
+            }}
+            transition={{
+                delay: contactDelay,
+                duration: 0.45,
+            }}
+        >
         <section className='my-28' id='contact'>
             <header className='px-5 text-2xl font-bold pt-10'>
                 <h2>Contact Me</h2>
@@ -48,6 +60,7 @@ const Contact = () => {
                 <p className='text-lg sm:text-3xl md:text-5xl font-light footer-font text-center'>That's all, folks.</p>
             </div>
         </section>
+        </motion.div>
     );
 };
 

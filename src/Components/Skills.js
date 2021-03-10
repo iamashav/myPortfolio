@@ -1,7 +1,20 @@
 import React from 'react';
+import {motion} from 'framer-motion';
 
-const Skills = () => {
+const Skills = ({skillsDelay}) => {
   return (
+    <motion.div
+        initial={{
+            scale: 0,
+            }}
+        animate={{
+            scale: 1,
+        }}
+        transition={{
+            delay: skillsDelay,
+            duration: 0.45,
+        }}
+      >
     <section className='my-28  px-5'>
       <header className='text-2xl font-bold pt-10'>
         <h2>Skills & Tools</h2>
@@ -33,6 +46,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
+    </motion.div>
   );
 };
 

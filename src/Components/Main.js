@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import Lottie from 'lottie-web';
 import animate from 'lottie-web';
+import { motion } from 'framer-motion';
 
-const Main = () => {
+const Main = ({titleDelay, subtitleDelay, animationDelay}) => {
   const container = useRef(null);
 
   useEffect(() => {
@@ -18,14 +19,53 @@ const Main = () => {
 
   return (
     <section className='my-16 px-5 md:my-32 flex flex-col flex-wrap space-y-16 md:space-y-0 patterns'>
-      <div className='m-auto w-72 md:w-96 lg:w-2/5 md:mr-0'>
-        <div className= 'container' ref={container}></div>
-      </div>
+      <motion.div
+        initial={{
+          scale: 0,
+          }}
+        animate={{
+          scale: 1,
+        }}
+        transition={{
+          delay: animationDelay,
+          duration: 0.45,
+          }}
+      >
+        <div className='m-auto w-72 md:w-96 lg:w-2/5 md:mr-0'>
+          <div className= 'container' ref={container}></div>
+        </div>
+      </motion.div>
       <div className='pt-20 max-w-md mb-auto space-y-5'>
-        <h1 className='text-5xl font-bold md:text-7xl'>Hello. I’m Ashav</h1>
-        <p className='tracking-wide leading-relaxed'>
-          I am a Front-End developer and I love to make user-friendly and resposive websites. Every new project is a begining of a great adventure to me.{' '}
-        </p>
+      <motion.div
+          initial={{
+            scale: 0,
+            }}
+          animate={{
+            scale: 1,
+          }}
+          transition={{
+            delay: titleDelay,
+            duration: 0.45,
+            }}
+        >
+          <h1 className='text-5xl font-bold md:text-7xl'>Hello. I’m Ashav</h1>
+        </motion.div>
+        <motion.div
+          initial={{
+            scale: 0,
+            }}
+          animate={{
+            scale: 1,
+          }}
+          transition={{
+            delay: subtitleDelay,
+            duration: 0.45,
+            }}
+        >
+          <p className='tracking-wide leading-relaxed'>
+            I am a Front-End developer and I love to make user-friendly and resposive websites. Every new project is a begining of a great adventure to me.{' '}
+          </p>
+        </motion.div>
       </div>
     </section>
   );

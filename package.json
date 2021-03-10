@@ -9,13 +9,17 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
     "autoprefixer": "^9.8.6",
+    "framer-motion": "^3.10.2",
+    "gsap": "^3.6.0",
+    "leonsans": "git@github.com:daffyduck-test/leonsans.git",
     "lottie-web": "^5.7.6",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
-    "web-vitals": "^1.1.0"
+    "web-vitals": "^1.1.0",
+    "wouter": "^2.7.3"
   },
   "scripts": {
     "start": "craco start",
