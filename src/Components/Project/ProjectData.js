@@ -14,6 +14,14 @@ const projects = [
       tools: ['React', 'CommerceJS', 'Stripe', 'Material-UI'],
       github: 'https://github.com/iamashav/shopping-cart',
       link: 'https://shoppingcartecommerce.netlify.app/',
+    },
+    {
+      title: 'My Chat',
+      image: '../images/my-chat',
+      description: 'I have created a chat room with firebase, where user can login with their google account and chat.',
+      tools: ['React', 'Firebase'],
+      github: 'https://github.com/iamashav/my-chat-app',
+      link: 'https://chat-app-b2ffc.web.app/',
     }
   ];
   
