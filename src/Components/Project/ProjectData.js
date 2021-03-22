@@ -22,6 +22,14 @@ const projects = [
       tools: ['React', 'Firebase'],
       github: 'https://github.com/iamashav/my-chat-app',
       link: 'https://chat-app-b2ffc.web.app/',
+    },
+    {
+      title: 'Movie Watchlist',
+      image: '../images/movie-watchlist',
+      description: 'I have created a movie watchlist using React, implementing React Hooks, Context API, storing data in localStorage and fetching data from an external API.',
+      tools: ['React', 'React Hooks', 'Context API'],
+      github: 'https://github.com/iamashav/movie-watchlist',
+      link: 'https://moviewatchlistapp.netlify.app/',
     }
   ];
   
