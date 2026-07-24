@@ -1,0 +1,40 @@
+@use 'tokens';
+
+.contact {
+  border-top: 1px solid tokens.$color-border;
+}
+
+.contact__inner {
+  width: min(1120px, 100% - #{tokens.$space-6 * 2});
+  margin-inline: auto;
+  padding-block: tokens.$space-8;
+  text-align: center;
+}
+
+.contact__heading {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.contact__subtitle {
+  margin-top: tokens.$space-3;
+  color: tokens.$color-text-muted;
+}
+
+.contact__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: tokens.$space-5;
+  margin-top: tokens.$space-6;
+}
+
+.contact__link {
+  color: tokens.$color-accent;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    color: tokens.$color-accent-hover;
+  }
+}
