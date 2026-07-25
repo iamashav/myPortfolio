@@ -9,6 +9,22 @@ import 'lenis/dist/lenis.css'
 import './styles/global.scss'
 import App from './App.tsx'
 
+// Avoid a flash of fallback fonts (FOUT): reveal the font-sensitive hero text
+// only once the real fonts have loaded. Timeout fallback so text never sticks
+// hidden if the Font Loading API misbehaves.
+const revealFonts = () => document.documentElement.classList.add('fonts-ready')
+if ('fonts' in document) {
+  Promise.all([
+    document.fonts.load('1em "Anton"'),
+    document.fonts.load('1em "Instrument Serif"'),
+  ])
+    .then(revealFonts)
+    .catch(revealFonts)
+  window.setTimeout(revealFonts, 1500)
+} else {
+  revealFonts()
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
