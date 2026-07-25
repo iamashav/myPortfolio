@@ -4,9 +4,12 @@ import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { Projects } from './components/Projects/Projects';
-import { Skills } from './components/Skills/Skills';
+import { TechStrip } from './components/TechStrip/TechStrip';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 function App() {
+  useSmoothScroll();
+
   return (
     <>
       <Header />
@@ -14,7 +17,7 @@ function App() {
         <Hero />
         <CaseStudies />
         <Projects />
-        <Skills />
+        <TechStrip />
         <Contact />
       </main>
       <Footer />

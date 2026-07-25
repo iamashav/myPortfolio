@@ -12,19 +12,27 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  // Near-black with a faint dot-grid texture for depth.
+  background-color: var(--color-bg);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 h1,
 h2,
 h3 {
   margin: 0;
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-regular);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 p {
@@ -48,6 +56,11 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-invert-text);
 }
 
 :focus-visible {
