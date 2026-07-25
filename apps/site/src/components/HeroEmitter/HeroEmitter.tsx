@@ -20,10 +20,6 @@ interface Particle {
   el: SVGCircleElement;
 }
 
-// Faithful take on the "Summer" gravity-emitter technique, adapted: black
-// letters (base), with orange liquid particles emitted from the cursor (and a
-// slowly orbiting head when idle) that grow, fall with gravity, then shrink —
-// merged by a gooey filter and clipped to the letters.
 export function HeroEmitter() {
   const svgRef = useRef<SVGSVGElement>(null);
   const groupRef = useRef<SVGGElement>(null);

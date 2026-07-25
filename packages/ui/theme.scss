@@ -1,9 +1,4 @@
-// Single dark theme, neon-cyan on near-black. Nearly every design token
-// lives here as a CSS custom property (one consistent var(--x) pattern,
-// single source of truth). Breakpoints are the sole exception — see
-// _breakpoints.scss for why they can't live here too.
 :root {
-  // Color — neon cyan on near-black
   --color-bg: #0a0a0a;
   --color-bg-elevated: #16181d;
   --color-text: #f2f2f2;
@@ -11,26 +6,20 @@
   --color-border: #282a30;
   --color-accent: #00b8d4;
   --color-accent-hover: #22d3ee;
-
-  // Secondary accent — a warm orange "spark", complementary to the cyan.
   --color-accent-2: #ff6a1a;
 
-  // Neon-dominant band (neon fill, dark ink) — hero, marquees, callout bands
   --color-invert-bg: #00b8d4;
   --color-invert-text: #06181c;
   --color-invert-text-muted: rgba(6, 24, 28, 0.66);
   --color-invert-border: rgba(6, 24, 28, 0.3);
 
-  // Neon glow, applied sparingly to accented type/borders
   --glow-accent: 0 0 24px rgba(0, 184, 212, 0.5);
 
-  // Type
   --font-display: 'Anton', 'Arial Narrow', sans-serif;
   --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
   --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
 
-  // Font size scale (rem, assumes 16px browser default)
   --font-size-xs: 0.75rem; // 12px
   --font-size-sm: 0.875rem; // 14px
   --font-size-base: 1rem; // 16px
@@ -39,13 +28,12 @@
   --font-size-xl: 1.5rem; // 24px
   --font-size-2xl: 1.75rem; // 28px
   --font-size-3xl: 2rem; // 32px
-  --font-size-hero-min: 2.5rem; // 40px — hero title clamp() lower bound
-  --font-size-hero-max: 4rem; // 64px — hero title clamp() upper bound
+  --font-size-hero-min: 2.5rem; // 40px
+  --font-size-hero-max: 4rem; // 64px
 
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
 
-  // Spacing scale (rem, assumes 16px browser default)
   --space-1: 0.25rem; // 4px
   --space-2: 0.5rem; // 8px
   --space-3: 0.75rem; // 12px
@@ -56,12 +44,10 @@
   --space-8: 4rem; // 64px
   --space-9: 6rem; // 96px
 
-  // Radius scale
   --radius-sm: 0.25rem; // 4px
   --radius-md: 0.5rem; // 8px
   --radius-lg: 1rem; // 16px
   --radius-full: 999px;
 
-  // Motion
   --transition-fast: 0.2s ease;
 }
