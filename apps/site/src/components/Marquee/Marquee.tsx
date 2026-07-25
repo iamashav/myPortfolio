@@ -3,18 +3,16 @@ import './marquee.scss';
 interface MarqueeProps {
   items: string[];
   separator?: string;
-  durationSec?: number;
 }
 
-// Decorative infinite scroller. The visible track is aria-hidden and the
-// content is duplicated so the loop is seamless; screen readers get the real
-// list from whatever renders alongside this (see TechStrip).
-export function Marquee({ items, separator = '/', durationSec = 28 }: MarqueeProps) {
+// aria-hidden + duplicated content for a seamless loop; the real list for
+// screen readers lives alongside this (see TechStrip).
+export function Marquee({ items, separator = '/' }: MarqueeProps) {
   const sequence = [...items, ...items];
 
   return (
     <div className="marquee" aria-hidden="true">
-      <div className="marquee__track" style={{ animationDuration: `${durationSec}s` }}>
+      <div className="marquee__track">
         {sequence.map((item, index) => (
           <span className="marquee__item" key={`${item}-${index}`}>
             {item}

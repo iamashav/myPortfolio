@@ -22,7 +22,7 @@ export function TechStrip() {
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <Marquee items={tech} durationSec={30} />
+      <Marquee items={tech} />
     </section>
   );
 }

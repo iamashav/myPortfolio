@@ -8,7 +8,7 @@
   align-items: center;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee-scroll linear infinite;
+  animation: marquee-scroll 30s linear infinite;
 }
 
 .marquee__item {
