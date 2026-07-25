@@ -1,35 +1,35 @@
 import { caseStudies } from '../../data/caseStudies';
-import styles from './CaseStudies.module.scss';
+import './case-studies.scss';
 
 export function CaseStudies() {
   return (
-    <section className={styles.caseStudies} id="case-studies">
-      <div className={styles.caseStudies__inner}>
-        <h2 className={styles.caseStudies__heading}>Case Studies</h2>
-        <div className={styles.caseStudies__list}>
+    <section className="case-studies" id="case-studies">
+      <div className="case-studies__inner">
+        <h2 className="case-studies__heading">Case Studies</h2>
+        <div className="case-studies__list">
           {caseStudies.map((study) => (
-            <article key={study.id} className={styles.caseStudies__card}>
-              <div className={styles.caseStudies__cardHeader}>
-                <h3 className={styles.caseStudies__cardTitle}>{study.title}</h3>
+            <article key={study.id} className="case-studies__card">
+              <div className="case-studies__card-header">
+                <h3 className="case-studies__card-title">{study.title}</h3>
                 <span
                   className={
                     study.status === 'shipped'
-                      ? styles.caseStudies__badge
-                      : styles['caseStudies__badge--progress']
+                      ? 'case-studies__badge'
+                      : 'case-studies__badge--progress'
                   }
                 >
                   {study.status === 'shipped' ? 'Shipped' : 'In progress'}
                 </span>
               </div>
-              <p className={styles.caseStudies__summary}>{study.summary}</p>
+              <p className="case-studies__summary">{study.summary}</p>
               {study.narrative.map((paragraph) => (
-                <p key={paragraph.slice(0, 24)} className={styles.caseStudies__paragraph}>
+                <p key={paragraph.slice(0, 24)} className="case-studies__paragraph">
                   {paragraph}
                 </p>
               ))}
-              <ul className={styles.caseStudies__tech}>
+              <ul className="case-studies__tech">
                 {study.tech.map((tech) => (
-                  <li key={tech} className={styles.caseStudies__techItem}>
+                  <li key={tech} className="case-studies__tech-item">
                     {tech}
                   </li>
                 ))}

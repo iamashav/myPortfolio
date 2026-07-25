@@ -1,4 +1,4 @@
-import styles from './Header.module.scss';
+import './header.scss';
 
 const navLinks = [
   { href: '#case-studies', label: 'Case Studies' },
@@ -9,14 +9,14 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className={styles.header}>
-      <div className={styles.header__inner}>
-        <a className={styles.header__brand} href="#top">
+    <header className="header">
+      <div className="header__inner">
+        <a className="header__brand" href="#top">
           Ashav Parihar
         </a>
-        <nav className={styles.header__nav} aria-label="Primary">
+        <nav className="header__nav" aria-label="Primary">
           {navLinks.map((link) => (
-            <a key={link.href} className={styles.header__link} href={link.href}>
+            <a key={link.href} className="header__link" href={link.href}>
               {link.label}
             </a>
           ))}

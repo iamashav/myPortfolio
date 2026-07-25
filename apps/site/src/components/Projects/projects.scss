@@ -1,0 +1,102 @@
+@use 'breakpoints';
+
+.projects {
+  border-top: 1px solid var(--color-border);
+}
+
+.projects__inner {
+  width: min(1120px, calc(100% - var(--space-6) * 2));
+  margin-inline: auto;
+  padding-block: var(--space-8);
+}
+
+.projects__heading {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-6);
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects__item {
+  display: grid;
+  grid-template-columns: auto 10rem 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--color-border);
+
+  &:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  @media (max-width: breakpoints.$bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projects__index {
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+
+  @media (max-width: breakpoints.$bp-tablet) {
+    display: none;
+  }
+}
+
+.projects__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.projects__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.projects__description {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.projects__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.projects__tech-item {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.projects__links {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+
+    &:hover {
+      color: var(--color-accent-hover);
+    }
+  }
+}

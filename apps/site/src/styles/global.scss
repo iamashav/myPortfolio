@@ -1,4 +1,4 @@
-@use 'tokens';
+@use 'theme';
 
 *,
 *::before,
@@ -12,9 +12,9 @@ html {
 
 body {
   margin: 0;
-  background: tokens.$color-bg;
-  color: tokens.$color-text;
-  font-family: tokens.$font-sans;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,6 +51,6 @@ ul {
 }
 
 :focus-visible {
-  outline: 2px solid tokens.$color-accent;
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
