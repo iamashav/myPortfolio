@@ -5,10 +5,12 @@ import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { Projects } from './components/Projects/Projects';
 import { TechStrip } from './components/TechStrip/TechStrip';
+import { useReveal } from './hooks/useReveal';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 function App() {
   useSmoothScroll();
+  useReveal();
 
   return (
     <>
