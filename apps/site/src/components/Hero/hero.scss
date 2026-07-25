@@ -1,18 +1,12 @@
-// Neon-dominant poster hero: full-viewport cyan field, big near-black type
-// centered, with role + scroll cue pinned to the bottom corners. Header
-// handles the top corners.
 .hero {
   position: relative;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   overflow: hidden;
-  padding: var(--space-9) var(--space-5) var(--space-7);
+  padding: var(--space-9) var(--space-5) var(--space-6);
   color: var(--color-invert-text);
 
-  // Cyan field with a faint dot-grid so the open space reads as intentional
-  // texture rather than blank. Kept subtle on purpose.
   background-color: var(--color-invert-bg);
   background-image: radial-gradient(rgba(6, 24, 28, 0.16) 1.2px, transparent 1.2px);
   background-size: 34px 34px;
@@ -22,10 +16,14 @@
   position: relative;
   z-index: 1;
   width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-// Hidden until the real fonts load, then faded in — avoids a flash of the
-// fallback font (and of the liquid clipped to fallback letter shapes).
+// Hidden until fonts load to avoid a flash of the fallback font.
 .hero-emitter,
 .hero__subtitle {
   opacity: 0;
@@ -47,14 +45,14 @@
 }
 
 .hero__meta {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  left: var(--space-5);
-  right: var(--space-5);
-  bottom: var(--space-6);
+  flex: 0 0 auto;
+  margin-top: var(--space-6);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  gap: var(--space-4);
 }
 
 .hero__role {
