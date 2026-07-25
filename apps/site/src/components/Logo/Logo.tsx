@@ -2,8 +2,7 @@ interface LogoProps {
   className?: string;
 }
 
-// Inline (not <img>) so it inherits `currentColor` and can be recolored by CSS
-// per context — e.g. black on the cyan hero, accent on hover.
+// Inline SVG (not <img>) so it inherits `currentColor` and recolors per context.
 export function Logo({ className }: LogoProps) {
   return (
     <svg className={className} viewBox="0 0 70 72" fill="currentColor" aria-hidden="true">

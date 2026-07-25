@@ -9,13 +9,11 @@ export function Hero() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [time, setTime] = useState(formatTime);
 
-  // Ticking local-time clock (no location named).
   useEffect(() => {
     const id = window.setInterval(() => setTime(formatTime()), 1000);
     return () => window.clearInterval(id);
   }, []);
 
-  // Orange cursor dot, scoped to the hero only — the native cursor stays.
   useEffect(() => {
     const section = sectionRef.current;
     const dot = cursorRef.current;
