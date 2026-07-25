@@ -1,23 +1,24 @@
-<p align="center"> My personal portfolio. Accessible and responsive SPA portfolio built with React.js. </p>
+# ashavparihar.me
 
-## Features
+Personal site and portfolio, structured as an npm workspaces monorepo so a future blog and
+playground app can be added without a rebuild of the setup.
 
+## Structure
 
-⚡️ Modern UI design \
-⚡️ Styled with Tailwind CSS\
-⚡️ Fully responsive and accessible design\
-⚡️ Lottie animation\
-⚡️ GSAP\
-⚡️ leon-sans\
-⚡️ Responsive images\
-⚡️ Amazing illustrations 
+- `apps/site` — the portfolio (Vite + React + TypeScript + SCSS), deployed to `/`
+- `apps/blog` — reserved for a future blog, deployed to `/blog`
+- `apps/playground` — reserved for a future project, deployed to `/play`
+- `packages/ui` — shared design tokens (colors, spacing, radius, type, breakpoints)
 
+## Development
 
-### Illustrations
+```bash
+npm install
+npm run dev --workspace apps/site
+```
 
-- [https://illlustrations.co/ ](https://illlustrations.co/)
-- [https://www.pixeltrue.com/](https://www.pixeltrue.com/)
+## Build
 
-### Author
-
-   Ashav Parihar - https://ashavparihar.me/
+```bash
+npm run build --workspace apps/site
+```
