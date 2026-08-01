@@ -23,7 +23,7 @@
   flex-direction: column;
   padding: var(--space-6);
   background-color: var(--color-invert-bg);
-  background-image: radial-gradient(rgba(6, 24, 28, 0.16) 1.2px, transparent 1.2px);
+  background-image: radial-gradient(rgb(var(--ink-rgb) / 0.16) 1.2px, transparent 1.2px);
   background-size: 34px 34px;
 }
 
