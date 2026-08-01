@@ -55,11 +55,16 @@ export function Projects() {
     let height = 0;
     let stars: Star[] = [];
 
+    // Star tints read from the shared palette triplets so the canvas stays a single source of truth with CSS.
+    const rootStyle = getComputedStyle(document.documentElement);
+    const starAccent = `rgb(${rootStyle.getPropertyValue('--accent-rgb')})`;
+    const starSpark = `rgb(${rootStyle.getPropertyValue('--accent-2-rgb')})`;
+
     const seedStars = () => {
       const count = clamp(Math.round((width * height) / 6500), 90, 260);
       stars = Array.from({ length: count }, () => {
         const roll = Math.random();
-        const tint = roll > 0.92 ? '#ff6a1a' : roll > 0.78 ? '#22d3ee' : '#ffffff';
+        const tint = roll > 0.92 ? starSpark : roll > 0.78 ? starAccent : '#ffffff';
         return {
           x: Math.random() * width,
           y: Math.random() * height,

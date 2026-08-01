@@ -30,9 +30,9 @@
   font-size: clamp(var(--font-size-sm), 2vw, var(--font-size-lg));
   line-height: 1;
   padding: var(--space-2) var(--space-4);
-  border: 1px solid rgba(6, 24, 28, 0.35);
+  border: 1px solid rgb(var(--ink-rgb) / 0.35);
   border-radius: var(--radius-full);
-  background: rgba(6, 24, 28, 0.04);
+  background: rgb(var(--ink-rgb) / 0.04);
   white-space: nowrap;
   will-change: transform;
   transition:

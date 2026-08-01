@@ -44,7 +44,7 @@ export function TechStrip() {
     let running = false;
     let pointerX = -9999;
     let pointerY = -9999;
-    const state = tech.map(() => ({ x: 0, y: 0, phase: Math.random() * Math.PI * 2 }));
+    const state: Array<{ x: number; y: number; phase: number }> = [];
 
     const onMove = (event: PointerEvent) => {
       pointerX = event.clientX;
@@ -77,7 +77,7 @@ export function TechStrip() {
           ty = (dy / dist) * force;
         }
 
-        const s = state[i];
+        const s = (state[i] ??= { x: 0, y: 0, phase: Math.random() * Math.PI * 2 });
         s.x += (tx - s.x) * 0.14;
         s.y += (ty - s.y) * 0.14;
         const floatY = Math.sin(t * 1.2 + s.phase) * 3;

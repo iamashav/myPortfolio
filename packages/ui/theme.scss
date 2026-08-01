@@ -1,19 +1,29 @@
 :root {
+  // Base hues as RGB triplets so every alpha variant derives from a single source.
+  --accent-rgb: 0 184 212;
+  --accent-2-rgb: 255 106 26;
+  --ink-rgb: 6 24 28;
+
   --color-bg: #0a0a0a;
   --color-bg-elevated: #16181d;
   --color-text: #f2f2f2;
   --color-text-muted: #8a8a92;
   --color-border: #282a30;
-  --color-accent: #00b8d4;
+  --color-accent: rgb(var(--accent-rgb));
   --color-accent-hover: #22d3ee;
-  --color-accent-2: #ff6a1a;
+  --color-accent-2: rgb(var(--accent-2-rgb));
 
-  --color-invert-bg: #00b8d4;
-  --color-invert-text: #06181c;
-  --color-invert-text-muted: rgba(6, 24, 28, 0.66);
-  --color-invert-border: rgba(6, 24, 28, 0.3);
+  --color-invert-bg: rgb(var(--accent-rgb));
+  --color-invert-text: rgb(var(--ink-rgb));
+  --color-invert-text-muted: rgb(var(--ink-rgb) / 0.66);
+  --color-invert-border: rgb(var(--ink-rgb) / 0.3);
 
-  --glow-accent: 0 0 24px rgba(0, 184, 212, 0.5);
+  // Projects "space" scene
+  --color-space: #04060d;
+  --color-space-panel: rgb(9 13 22 / 0.92);
+  --color-rocket: #e8eef5;
+
+  --glow-accent: 0 0 24px rgb(var(--accent-rgb) / 0.5);
 
   --font-display: 'Anton', 'Arial Narrow', sans-serif;
   --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
