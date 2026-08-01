@@ -57,52 +57,68 @@
   }
 }
 
-// Registration-mark frame: four paired-rule bars whose corner overshoots are randomized in JS.
-.hero__frame {
+// Registration-mark frame: eight separate rules, each with its own randomized end lengths, so the
+// paired lines don't line up at the corners.
+.hero__frame-line {
   position: absolute;
+  background: var(--color-invert-text);
   pointer-events: none;
-  background-repeat: no-repeat;
-  background-image:
-    linear-gradient(var(--color-invert-text), var(--color-invert-text)),
-    linear-gradient(var(--color-invert-text), var(--color-invert-text));
 }
 
-.hero__frame--left,
-.hero__frame--right {
-  width: var(--frame-gap);
-  background-size: 1px 100%;
-  background-position: 0 0, 100% 0;
-}
-
-.hero__frame--top,
-.hero__frame--bottom {
-  height: var(--frame-gap);
-  background-size: 100% 1px;
-  background-position: 0 0, 0 100%;
-}
-
-.hero__frame--left {
+.hero__frame-line--l-out {
   left: 0;
-  top: calc(-1 * var(--o-lt, 0.8rem));
-  height: calc(100% + var(--o-lt, 0.8rem) + var(--o-lb, 0.8rem));
+  width: 1px;
+  top: calc(-1 * var(--l-out-a, 0.8rem));
+  height: calc(100% + var(--l-out-a, 0.8rem) + var(--l-out-b, 0.8rem));
 }
 
-.hero__frame--right {
+.hero__frame-line--l-in {
+  left: var(--frame-gap);
+  width: 1px;
+  top: calc(-1 * var(--l-in-a, 0.8rem));
+  height: calc(100% + var(--l-in-a, 0.8rem) + var(--l-in-b, 0.8rem));
+}
+
+.hero__frame-line--r-out {
   right: 0;
-  top: calc(-1 * var(--o-rt, 0.8rem));
-  height: calc(100% + var(--o-rt, 0.8rem) + var(--o-rb, 0.8rem));
+  width: 1px;
+  top: calc(-1 * var(--r-out-a, 0.8rem));
+  height: calc(100% + var(--r-out-a, 0.8rem) + var(--r-out-b, 0.8rem));
 }
 
-.hero__frame--top {
+.hero__frame-line--r-in {
+  right: var(--frame-gap);
+  width: 1px;
+  top: calc(-1 * var(--r-in-a, 0.8rem));
+  height: calc(100% + var(--r-in-a, 0.8rem) + var(--r-in-b, 0.8rem));
+}
+
+.hero__frame-line--t-out {
   top: 0;
-  left: calc(-1 * var(--o-tl, 0.8rem));
-  width: calc(100% + var(--o-tl, 0.8rem) + var(--o-tr, 0.8rem));
+  height: 1px;
+  left: calc(-1 * var(--t-out-a, 0.8rem));
+  width: calc(100% + var(--t-out-a, 0.8rem) + var(--t-out-b, 0.8rem));
 }
 
-.hero__frame--bottom {
+.hero__frame-line--t-in {
+  top: var(--frame-gap);
+  height: 1px;
+  left: calc(-1 * var(--t-in-a, 0.8rem));
+  width: calc(100% + var(--t-in-a, 0.8rem) + var(--t-in-b, 0.8rem));
+}
+
+.hero__frame-line--b-out {
   bottom: 0;
-  left: calc(-1 * var(--o-bl, 0.8rem));
-  width: calc(100% + var(--o-bl, 0.8rem) + var(--o-br, 0.8rem));
+  height: 1px;
+  left: calc(-1 * var(--b-out-a, 0.8rem));
+  width: calc(100% + var(--b-out-a, 0.8rem) + var(--b-out-b, 0.8rem));
+}
+
+.hero__frame-line--b-in {
+  bottom: var(--frame-gap);
+  height: 1px;
+  left: calc(-1 * var(--b-in-a, 0.8rem));
+  width: calc(100% + var(--b-in-a, 0.8rem) + var(--b-in-b, 0.8rem));
 }
 
 .hero-emitter {

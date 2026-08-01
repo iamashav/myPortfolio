@@ -14,6 +14,7 @@
   padding-block: var(--space-7);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-8);
 
   @media (min-width: breakpoints.$bp-desktop) {
@@ -26,6 +27,11 @@
 
 .contact__cta {
   max-width: 34rem;
+  text-align: center;
+
+  @media (min-width: breakpoints.$bp-desktop) {
+    text-align: left;
+  }
 }
 
 .contact__heading {
@@ -36,8 +42,13 @@
 .contact__links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-3) var(--space-5);
   margin-top: var(--space-6);
+
+  @media (min-width: breakpoints.$bp-desktop) {
+    justify-content: flex-start;
+  }
 }
 
 .contact__link {
