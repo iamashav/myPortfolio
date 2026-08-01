@@ -1,10 +1,12 @@
+@use 'breakpoints';
+
 .hero {
   position: relative;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: var(--space-9) var(--space-5) var(--space-6);
+  padding: var(--space-9) clamp(var(--space-6), 4vw, var(--space-8)) var(--space-6);
   color: var(--color-invert-text);
 
   background-color: var(--color-invert-bg);
@@ -21,27 +23,115 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: var(--space-7);
+
+  @media (min-width: breakpoints.$bp-desktop) {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-6);
+  }
 }
 
 // Hidden until fonts load to avoid a flash of the fallback font.
 .hero-emitter,
-.hero__subtitle {
+.hero__about {
   opacity: 0;
 }
 
 .fonts-ready .hero-emitter,
-.fonts-ready .hero__subtitle {
+.fonts-ready .hero__about {
   opacity: 1;
   transition: opacity 0.4s ease;
 }
 
-.hero__subtitle {
-  max-width: 40rem;
-  margin-top: var(--space-5);
-  color: var(--color-invert-text-muted);
+.hero__about {
+  --frame-gap: 0.7rem; // distance between each paired rule
+
+  position: relative;
+  width: 100%;
+  max-width: 46rem;
+  padding: var(--space-7);
+
+  @media (min-width: breakpoints.$bp-desktop) {
+    flex: 0 0 38rem;
+  }
+}
+
+// Registration-mark frame: four paired-rule bars whose corner overshoots are randomized in JS.
+.hero__frame {
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--color-invert-text), var(--color-invert-text)),
+    linear-gradient(var(--color-invert-text), var(--color-invert-text));
+}
+
+.hero__frame--left,
+.hero__frame--right {
+  width: var(--frame-gap);
+  background-size: 1px 100%;
+  background-position: 0 0, 100% 0;
+}
+
+.hero__frame--top,
+.hero__frame--bottom {
+  height: var(--frame-gap);
+  background-size: 100% 1px;
+  background-position: 0 0, 0 100%;
+}
+
+.hero__frame--left {
+  left: 0;
+  top: calc(-1 * var(--o-lt, 0.8rem));
+  height: calc(100% + var(--o-lt, 0.8rem) + var(--o-lb, 0.8rem));
+}
+
+.hero__frame--right {
+  right: 0;
+  top: calc(-1 * var(--o-rt, 0.8rem));
+  height: calc(100% + var(--o-rt, 0.8rem) + var(--o-rb, 0.8rem));
+}
+
+.hero__frame--top {
+  top: 0;
+  left: calc(-1 * var(--o-tl, 0.8rem));
+  width: calc(100% + var(--o-tl, 0.8rem) + var(--o-tr, 0.8rem));
+}
+
+.hero__frame--bottom {
+  bottom: 0;
+  left: calc(-1 * var(--o-bl, 0.8rem));
+  width: calc(100% + var(--o-bl, 0.8rem) + var(--o-br, 0.8rem));
+}
+
+.hero-emitter {
+  @media (min-width: breakpoints.$bp-desktop) {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.hero__about-tab {
+  display: block;
+  margin-bottom: var(--space-5);
+  color: var(--color-invert-text);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero__about-text {
+  color: var(--color-invert-text);
   font-family: var(--font-serif);
   font-size: var(--font-size-xl);
-  line-height: 1.35;
+  line-height: 1.45;
+
+  & + & {
+    margin-top: var(--space-5);
+  }
 }
 
 .hero__meta {

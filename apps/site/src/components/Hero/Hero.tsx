@@ -4,10 +4,22 @@ import './hero.scss';
 
 const formatTime = () => new Date().toLocaleTimeString('en-GB', { hour12: false });
 
+const FRAME_OVERSHOOTS = ['--o-tl', '--o-tr', '--o-rt', '--o-rb', '--o-bl', '--o-br', '--o-lt', '--o-lb'];
+
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
   const [time, setTime] = useState(formatTime);
+
+  // Randomize each corner's overshoot so the about frame reads hand-struck rather than uniform.
+  useEffect(() => {
+    const about = aboutRef.current;
+    if (!about) return;
+    FRAME_OVERSHOOTS.forEach((prop) => {
+      about.style.setProperty(prop, `${(0.3 + Math.random() * 0.9).toFixed(2)}rem`);
+    });
+  }, []);
 
   useEffect(() => {
     const id = window.setInterval(() => setTime(formatTime()), 1000);
@@ -57,10 +69,22 @@ export function Hero() {
       <div className="hero__inner">
         <h1 className="sr-only">Ashav Parihar</h1>
         <HeroEmitter />
-        <p className="hero__subtitle">
-          I build and ship production React/TypeScript frontends and Python-backed services —
-          recently leading a framework migration and building AI-assisted developer tooling.
-        </p>
+        <aside className="hero__about" ref={aboutRef}>
+          <span className="hero__frame hero__frame--top" aria-hidden="true" />
+          <span className="hero__frame hero__frame--right" aria-hidden="true" />
+          <span className="hero__frame hero__frame--bottom" aria-hidden="true" />
+          <span className="hero__frame hero__frame--left" aria-hidden="true" />
+          <span className="hero__about-tab">// About</span>
+          <p className="hero__about-text">
+            I build and ship production React/TypeScript interfaces and the backend services behind
+            them.
+          </p>
+          <p className="hero__about-text">
+            I like taking things from idea to production — balancing polished, professional work with
+            a creative streak: motion, interaction, and the small touches that make something feel
+            alive.
+          </p>
+        </aside>
       </div>
 
       <div className="hero__meta">
