@@ -8,6 +8,16 @@
 
 html {
   scroll-behavior: smooth;
+
+  // The visible scrollbar is the custom <Scrollbar> overlay; hide the native one on all engines.
+  scrollbar-width: none;
+}
+
+// Kept un-nested so it targets the root scroller on Windows Chrome, which ignores `html::-webkit-scrollbar`.
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 body {

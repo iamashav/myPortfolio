@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+import { setLenis } from '../lib/lenis';
 
 export function useSmoothScroll() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+    setLenis(lenis);
 
     let raf = 0;
     const loop = (time: number) => {
@@ -27,6 +29,7 @@ export function useSmoothScroll() {
       document.removeEventListener('click', onClick);
       cancelAnimationFrame(raf);
       lenis.destroy();
+      setLenis(null);
     };
   }, []);
 }

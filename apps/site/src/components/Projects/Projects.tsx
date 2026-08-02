@@ -145,7 +145,8 @@ export function Projects() {
           if (!card) return;
           const center = INTRO + (i + 0.5) * slot;
           const d = progress - center;
-          const y = clamp((d / slot) * 190, -150, 150);
+          // Cards enter from below and stream up past the rocket, matching the descent and the starfield.
+          const y = clamp((-d / slot) * 190, -150, 150);
           const opacity = clamp(1 - Math.abs(d) / (slot * 0.7), 0, 1);
           card.style.transform = `translateY(${y}%)`;
           card.style.opacity = `${opacity}`;
